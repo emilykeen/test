@@ -1,6 +1,6 @@
 $(".submit").on("click",function displayResults(event) {
-	var band = $("#userInput").val().trim() + " music ";
-	$(".video-here").empty();
+	var band = $("#userInput").val().trim() + " music " +"vevo song";
+	$("#youTube-Here").empty();
 
 console.log(band);
 	event.preventDefault();
@@ -20,14 +20,11 @@ console.log(band);
     	for (var i =0; i< results.length; i++){
     		var videoID = results[i].id.videoId;
     		console.log(videoID);
-
     		var videoDiv = $("<div class = 'video'>");
     		var VideoATag = $("<iframe>");
     		VideoATag.attr("src","https://www.youtube.com/embed/" + videoID);
-
-
     		videoDiv.prepend(VideoATag);
-    		$(".video-here").prepend(videoDiv);
+    		$("#youTube-Here").prepend(videoDiv);
     	}
 
 
